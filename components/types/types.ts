@@ -1,0 +1,25 @@
+export interface ProductProps {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    image: string;
+    rating: {
+      rate: number;
+      count: number;
+    };
+  }
+  
+  
+  export interface EditProductCommand {
+    title: string;
+    price: number;
+    description: string;
+    image: string;
+    category: string;
+  }
+  
+  export interface ProductId {
+    id: number;
+  }
+  
