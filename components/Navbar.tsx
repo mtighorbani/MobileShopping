@@ -7,7 +7,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 const Navbar = () => {
   return (<div className=' w-full bg-[#FFFFFF] mb-11'>
     
-      <div dir='rtl' className=' px-[60px] m-auto flex justify-between max-w-[1440px] h-[72px] '>
+      <div dir='rtl' className=' px-[60px] max-sm:px-[20px] m-auto flex justify-between max-w-[1440px] h-[72px] '>
           <Link rel="stylesheet" href="/">
               <div className='flex top-[2px] right-[60px] mt-[22px]'>
                   <div className='w-[24px] rounded-full h-[24px] bg-[#231FF5] relative right-[-10px] '></div>

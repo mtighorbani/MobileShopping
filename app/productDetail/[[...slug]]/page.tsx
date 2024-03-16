@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import ActionButton from "@/components/ActionComponent";
 import { AddProducts } from "@/components/global/urls";
 import { ProductProps } from "@/components/types/types";

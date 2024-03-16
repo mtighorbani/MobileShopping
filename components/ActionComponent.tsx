@@ -13,7 +13,7 @@ import ProductCards from "./ProductCards";
 
 
 const ActionButton = ({ id , price, title, description }: any) => {
-  const [open, setOpen] = useState(false);
+  const [showDeleteModal, setshowDeleteModal] = useState(false);
   const [opnEdit, setopnEdit] = useState(false);
 
 
@@ -27,16 +27,16 @@ const ActionButton = ({ id , price, title, description }: any) => {
   };
 
   const showModal = () => {
-    setOpen(true);
+    setshowDeleteModal(true);
   };
   const hideModal = () => {
-    setOpen(false);
+    setshowDeleteModal(false);
   };
 
   const deleteProductHandler = () => {
     deleteProduct(`${AddProducts}${id}`);
     alert("عملیات با موفقیث انجام شد");
-    setOpen(false);
+    setshowDeleteModal(false);
   };
 
   const [form] = Form.useForm();
@@ -62,7 +62,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
   return (
     <div aria-hidden="true" className="">
       <div
-        className="inline-flex max-w-[178px] max-h-10 rounded-[50px] bg-white shadow-sm max-sm:relative  "
+        className="inline-flex w-[178px] h-10 rounded-[50px] bg-white shadow-sm max-sm:relative  "
         role="group"
       >
         <button
@@ -86,7 +86,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
           حذف محصول
         </button>
       </div>
-      {open ? (
+      {showDeleteModal ? (
         <div
           id="popup-modal"
           tabIndex={-1}
@@ -142,7 +142,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
               onFinish={onFinish}
               style={{ maxWidth: 602 }}
               scrollToFirstError
-              className=" mx-auto overflow-hidden "
+              className=" mx-auto overflow-hidden max-sm:px-4 "
             >
               <p>عنوان فارسی محصول</p>
               <Form.Item
@@ -153,7 +153,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
                 {/* <label className="text-[#A0A0B3]   text-xs font-medium  ">
             عنوان محصول
           </label> */}
-                <Input  className=" mb-2  rounded-lg max-w-[602px] mt-1 h-12 text-black " defaultValue={title} />
+                <Input  className=" mb-2  rounded-lg max-w-[602px] mt-1 h-14  text-black  " defaultValue={title} />
               </Form.Item>
               <p>عنوان انگلیسی</p>
 
@@ -165,7 +165,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
             عنوان انگلیسی محصول
           </label> */}
 
-                <Input defaultValue={title} className=" rounded-lg max-w-[602px]  h-12 text-black mt-1" />
+                <Input defaultValue={title} className=" rounded-lg max-w-[602px]  h-14 text-black mt-1" />
               </Form.Item>
               {/* <div className=" flex justify-between  "> */}
               <div className="flex justify-around">
@@ -175,7 +175,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
                     className="max-w-[602px]"
                     name={"price"}
                   >
-                    <InputNumber defaultValue={price.toLocaleString('fa')} className=" rounded-lg w-[291px]  max-sm:w-[145px] text-right align-middle  h-12 text-black mt-1 pt-2" />
+                    <InputNumber defaultValue={price.toLocaleString('fa')} className=" rounded-lg w-[291px]  max-sm:w-[250px] text-right align-middle  h-14 text-black mt-1 pt-3" />
                   </Form.Item>
                 </div>
                 <div>
@@ -184,7 +184,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
                     className="max-w-[602px]  "
                     name={"image"}
                   >
-                    <InputNumber defaultValue={price.toLocaleString('fa')} className=" rounded-lg w-[291px] max-sm:w-[145px]  text-right  h-12 text-black mt-1 pt-2" />
+                    <InputNumber defaultValue={price.toLocaleString('fa')} className=" rounded-lg w-[291px] max-sm:w-[250px]  text-right  h-14 text-black mt-1 pt-3" />
                   </Form.Item>
                 </div>
               </div>
@@ -193,7 +193,7 @@ const ActionButton = ({ id , price, title, description }: any) => {
                 name={"description"}
                 className="w-[100%] "
               >
-                <Input.TextArea autoSize={{ minRows: 4, maxRows: 5 } } defaultValue={description}
+                <Input.TextArea autoSize={{ minRows: 4, maxRows: 6 } } defaultValue={description}
                 />
               </Form.Item>
               <div className="flex max-sm:pr-2  ">
