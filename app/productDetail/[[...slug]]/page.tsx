@@ -1,7 +1,7 @@
   "use client";
-import ActionButton from "@/components/ActionComponent";
-import { AddProducts } from "@/components/global/urls";
-import { ProductProps } from "@/components/types/types";
+import ProductEditor from "@/components/ProductEditor";
+import { AddProducts } from "@/global/urls";
+import { ProductProps } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
@@ -46,7 +46,7 @@ const Page = ({ params: { slug }, searchParams: { id } }: Props) => {
         <>
           <div dir="rtl" className=" w-[40%] h-[100%] max-sm:h-[5%]  max-sm:w-[100%]  ">
             <div className=" absolute mt-5 mr-5">
-              <ActionButton id={id} price={singleProductDetail?.price} title={singleProductDetail?.title} description={singleProductDetail?.description} />
+              <ProductEditor id={id} price={singleProductDetail?.price} title={singleProductDetail?.title} description={singleProductDetail?.description} />
             </div>
             <div className=" max-sm:pt-4">
               {

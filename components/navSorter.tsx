@@ -3,13 +3,13 @@ import React, { useState } from "react";
 
 
 const NavSorter = ( {props}: any) => {
-  const [sort, setSort] = useState(props);
+  const [sort, setSort] = useState(false);
   props(sort)
   const sortDescHnadler= () => {
-    setSort(true);
+    setSort(props);
   };
   const sortAscHnadler= () => {
-    setSort(false);
+    setSort(props);
   };
   return (
     <div

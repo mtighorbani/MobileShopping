@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/components/global/urls'
+import { BASE_URL } from '@/global/urls'
 import axios from 'axios'
 
 

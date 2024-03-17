@@ -3,16 +3,15 @@ import deleteProduct from "@/hooks/ProductGetApi";
 import React, { useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { RiPencilLine } from "react-icons/ri";
-import { EditProductCommand, ProductId, ProductProps } from "@/components/types/types";
+import { EditProductCommand, ProductId, ProductProps } from "@/types/types";
 import { useMutation } from "@tanstack/react-query";
 import { Divider, Form, Input, InputNumber } from "antd";
 import axios from "axios";
-import { AddProducts } from "@/components/global/urls";
-import ProductCards from "./ProductCards";
+import { AddProducts } from "@/global/urls";
 
 
 
-const ActionButton = ({ id , price, title, description }: any) => {
+const ProductEditor = ({ id , price, title, description }: any) => {
   const [showDeleteModal, setshowDeleteModal] = useState(false);
   const [opnEdit, setopnEdit] = useState(false);
 
@@ -222,4 +221,4 @@ const ActionButton = ({ id , price, title, description }: any) => {
   );
 };
 
-export default ActionButton;
+export default ProductEditor;
