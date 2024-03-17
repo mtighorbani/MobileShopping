@@ -17,9 +17,7 @@ const Page = ({ params: { slug }, searchParams: { id } }: Props) => {
 
   const {
     data: singleProductDetail,
-    /*// ? you can also uncomment below lines and use those
-    isFetching: isFetchingDingleProductDetail,
-    refetch: refetchSingleProductDetail, */
+
   } = useQuery<ProductProps>({
     queryFn: async () => (await axios.get(`${AddProducts}${id}`)).data,
     queryKey: ["singleProductDetail"],
