@@ -192,10 +192,10 @@ const ProductEditor = ({ id , price, title, description }: any) => {
                 name={"description"}
                 className="w-[100%] "
               >
-                <Input.TextArea autoSize={{ minRows: 4, maxRows: 6 } } defaultValue={description}
+                <Input.TextArea autoSize={{ minRows: 4, maxRows: 3} } defaultValue={description}
                 />
               </Form.Item>
-              <div className="flex max-sm:pr-2  ">
+              <div className="flex max-sm:pr-2 ">
                 <Form.Item>
                   <button className=" w-[133px] h-12 rounded-[40px] text-white bg-[#1A43D3] ">
                     ثبت تغییرات
