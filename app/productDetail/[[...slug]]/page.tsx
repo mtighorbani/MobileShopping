@@ -13,27 +13,15 @@ interface Props {
 }
 
 const Page = ({ params: { slug }, searchParams: { id } }: Props) => {
-  // const [productDetail, setproductDetail] = useState<ProductProps>();
-
   const {
     data: singleProductDetail,
-
   } = useQuery<ProductProps>({
     queryFn: async () => (await axios.get(`${AddProducts}${id}`)).data,
     queryKey: ["singleProductDetail"],
     enabled: true,
   });
 
-  /*   useEffect(() => {
-    async () => {
-      try {
-        const data: ProductProps = await axios.get(`${getAddProducts}${id}`);
-        setproductDetail(data);
-      } catch (error: any) {
-        console.log(error.message);
-      }
-    };
-  }); */
+
 
   return (
     <>

@@ -4,9 +4,8 @@
 
 @font-face {
   font-family: 'Shabnam' ;
-  src: url('../public/shabnam-font-v5.0.1/Farsi-Digits-Without-Latin/Shabnam-Bold-FD-WOL.ttf');
+  src: url('../public/shabnam-font-v5.0.1/Shabnam.ttf') format('truetype');
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {

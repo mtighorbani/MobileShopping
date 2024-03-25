@@ -23,3 +23,9 @@ export interface ProductProps {
     id: number;
   }
   
+  export interface InitialProductState {
+    products: ProductProps[];
+    loading: boolean;
+    error: string;
+  }
+  

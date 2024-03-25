@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./Store";
 import apiClient from "@/api/products-api";
-import {ProductProps} from '@/types/types'
+import {InitialProductState, ProductProps} from '@/types/types'
 
 
 export const fetchProducts = createAsyncThunk(
@@ -20,13 +20,8 @@ export const fetchProducts = createAsyncThunk(
 
 
 
-interface InitialState {
-  products: ProductProps[];
-  loading: boolean;
-  error: string;
-}
 
-const ProductInitialState: InitialState = {
+const ProductInitialState: InitialProductState = {
   products: [],
   loading: false,
   error: "",
