@@ -17,10 +17,12 @@ interface Props {
   searchParams: { id: number };
 }
 
-const Page = ({ params: { slug }, searchParams: { id } }: Props) => {
+const url = process.env.NEXT_PUBLIC_API_ADD_PRODUCT
+
+const Page = ({ searchParams: { id } }: Props) => {
   const { data: singleProductDetail } = useQuery<ProductProps>({
     queryFn: async () =>
-      (await axios.get(`${process.env.ADD_PRODUCT}${id}`)).data,
+      (await axios.get(`${url}${id}`)).data,
     queryKey: ["singleProductDetail"],
     enabled: true,
   });
