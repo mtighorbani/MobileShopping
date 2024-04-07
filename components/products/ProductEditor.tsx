@@ -1,14 +1,20 @@
 "use client";
-import deleteProduct from "@/hooks/ProductGetApi";
-import React, { useState } from "react";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { RiPencilLine } from "react-icons/ri";
-import { EditProductCommand, ProductId, ProductProps } from "@/types/types";
-import { useMutation } from "@tanstack/react-query";
-import { Divider, Form, Input, InputNumber } from "antd";
-import axios from "axios";
-import { AddProducts } from "@/global/urls";
 
+
+import React, { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { RiPencilLine } from "react-icons/ri";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
+
+import deleteProduct from "@/hooks/ProductGetApi";
+
+
+import axios from "axios";
+
+
+import { EditProductCommand } from "@/types/types";
+import { Divider, Form, Input, InputNumber } from "antd";
 
 
 const ProductEditor = ({ id , price, title, description }: any) => {
@@ -33,7 +39,7 @@ const ProductEditor = ({ id , price, title, description }: any) => {
   };
 
   const deleteProductHandler = () => {
-    deleteProduct(`${AddProducts}${id}`);
+    deleteProduct(`${process.env.addProducts}${id}`);
     alert("عملیات با موفقیث انجام شد");
     setshowDeleteModal(false);
   };
@@ -43,7 +49,7 @@ const ProductEditor = ({ id , price, title, description }: any) => {
   const { mutate: mutateProductEdit, isPending: pendingProductEdit } =
     useMutation({
       mutationFn: async (data: EditProductCommand) =>
-        (await axios.put<EditProductCommand>(`${AddProducts}${id}`, data))
+        (await axios.put<EditProductCommand>(`${process.env.AddProducts}${id}`, data))
           .data,
       onSuccess: () => {
         alert("ویرایش محصول با موفقیت انجام شد");

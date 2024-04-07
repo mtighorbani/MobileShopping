@@ -1,11 +1,16 @@
-  "use client";
-import ProductEditor from "@/components/ProductEditor";
-import { AddProducts } from "@/global/urls";
-import { ProductProps } from "@/types/types";
+"use client";
+
+
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
 import { GiRoundStar } from "react-icons/gi";
+
+
+import ProductEditor from "@/components/products/ProductEditor";
+import { ProductProps } from "@/types/types";
+
+
 
 interface Props {
   params: { slug: string };
@@ -13,15 +18,12 @@ interface Props {
 }
 
 const Page = ({ params: { slug }, searchParams: { id } }: Props) => {
-  const {
-    data: singleProductDetail,
-  } = useQuery<ProductProps>({
-    queryFn: async () => (await axios.get(`${AddProducts}${id}`)).data,
+  const { data: singleProductDetail } = useQuery<ProductProps>({
+    queryFn: async () =>
+      (await axios.get(`${process.env.ADD_PRODUCT}${id}`)).data,
     queryKey: ["singleProductDetail"],
     enabled: true,
   });
-
-
 
   return (
     <>
@@ -30,9 +32,17 @@ const Page = ({ params: { slug }, searchParams: { id } }: Props) => {
         className=" flex bg-white rounded-[20px] ring-1 ring-[#E0E0E0] max-w-[1320px] m-auto max-h-[538px] max-sm:h-[800px]  max-sm:block max-sm:justify-center max-s "
       >
         <>
-          <div dir="rtl" className=" w-[40%] h-[100%] max-sm:h-[5%]  max-sm:w-[100%]  ">
+          <div
+            dir="rtl"
+            className=" w-[40%] h-[100%] max-sm:h-[5%]  max-sm:w-[100%]  "
+          >
             <div className=" absolute mt-5 mr-5">
-              <ProductEditor id={id} price={singleProductDetail?.price} title={singleProductDetail?.title} description={singleProductDetail?.description} />
+              <ProductEditor
+                id={id}
+                price={singleProductDetail?.price}
+                title={singleProductDetail?.title}
+                description={singleProductDetail?.description}
+              />
             </div>
             <div className=" max-sm:pt-4">
               {

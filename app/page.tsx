@@ -1,4 +1,4 @@
-import ProductCards from '@/components/ProductCards'
+import ProductCards from '@/components/products/ProductCards'
 
 
 export default function Home() {
