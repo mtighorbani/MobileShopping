@@ -3,23 +3,24 @@
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { GiRoundStar } from "react-icons/gi";
 
 
 import ProductEditor from "@/components/products/ProductEditor";
-import { ProductProps } from "@/types/types";
+import ParamsProps, { ProductProps } from "@/types/types";
 
 
 
-interface Props {
-  params: { slug: string };
-  searchParams: { id: number };
-}
+
 
 const url = process.env.NEXT_PUBLIC_API_ADD_PRODUCT
 
-const Page = ({ searchParams: { id } }: Props) => {
+const Page = ({ searchParams: { id } }: ParamsProps) => {
+
+  const [loadinf, setLoading] = useState(false)
+
+
   const { data: singleProductDetail } = useQuery<ProductProps>({
     queryFn: async () =>
       (await axios.get(`${url}${id}`)).data,

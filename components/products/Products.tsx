@@ -5,9 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-
-import ProductSkeleton from "./ProductSkeleton";
-
+import Loading from "./Loading";
 
 import { AppDispatch } from "@/utils/store/ProductStore/Store";
 import { fetchProducts } from "@/utils/store/ProductStore/slice-Products";
@@ -16,10 +14,7 @@ import { useAppSelector } from "@/utils/store/ProductStore/hooks";
 import { sort } from "fast-sort";
 import { GiRoundStar } from "react-icons/gi";
 
-
-
-
-const ProductCards = () => {
+const Products = () => {
   const [sortProduct, setSortProduct] = useState(false);
   const loading = useAppSelector((state) => state.products.loading);
   const error = useAppSelector((state) => state.products.error);
@@ -27,7 +22,9 @@ const ProductCards = () => {
   const product = useAppSelector((state) => state.products);
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(fetchProducts('https://fakestoreapi.com/products/category/electronics'));
+    dispatch(
+      fetchProducts("https://fakestoreapi.com/products/category/electronics")
+    );
   }, [dispatch]);
   const sortDescHnadler = () => {
     setSortProduct(true);
@@ -75,8 +72,8 @@ const ProductCards = () => {
         className=" max-w-[1320px] mt-[25px] mx-auto grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:content-center max-lg:grid-cols-3  "
       >
         {loading ? (
-          <div className="grid grid-cols-4 max-sm:grid-cols-2 max-lg:grid-cols-3">
-            <ProductSkeleton />
+          <div className=" mt-10 w-[1280px] self-center ">
+            <Loading />
           </div>
         ) : (
           sortedProducts.map((product) => (
@@ -125,4 +122,4 @@ const ProductCards = () => {
   );
 };
 
-export default ProductCards;
+export default Products;

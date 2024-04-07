@@ -29,3 +29,8 @@ export interface ProductProps {
     error: string;
   }
   
+
+  export default interface ParamsProps {
+    params: { slug: string };
+    searchParams: { id: number };
+  }

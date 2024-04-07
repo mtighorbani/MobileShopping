@@ -39,7 +39,7 @@ const ProductEditor = ({ id , price, title, description }: any) => {
   };
 
   const deleteProductHandler = () => {
-    deleteProduct(`${process.env.addProducts}${id}`);
+    deleteProduct(`${process.env.NEXT_PUBLIC_API_ADD_PRODUCT}${id}`);
     alert("عملیات با موفقیث انجام شد");
     setshowDeleteModal(false);
   };
@@ -49,7 +49,7 @@ const ProductEditor = ({ id , price, title, description }: any) => {
   const { mutate: mutateProductEdit, isPending: pendingProductEdit } =
     useMutation({
       mutationFn: async (data: EditProductCommand) =>
-        (await axios.put<EditProductCommand>(`${process.env.AddProducts}${id}`, data))
+        (await axios.put<EditProductCommand>(`${process.env.NEXT_PUBLIC_API_ADD_PRODUCT}${id}`, data))
           .data,
       onSuccess: () => {
         alert("ویرایش محصول با موفقیت انجام شد");
