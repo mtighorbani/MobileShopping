@@ -2,17 +2,22 @@
 
 import Link from "next/link";
 
+
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Loading from "./Loading";
 
+import Loading from "../Loading";
 import { AppDispatch } from "@/utils/store/ProductStore/Store";
 import { fetchProducts } from "@/utils/store/ProductStore/slice-Products";
 import { useAppSelector } from "@/utils/store/ProductStore/hooks";
+import { home,currency } from "@/public/texts/string";
+
 
 import { sort } from "fast-sort";
 import { GiRoundStar } from "react-icons/gi";
+
+
 
 const Products = () => {
   const [sortProduct, setSortProduct] = useState(false);
@@ -52,7 +57,7 @@ const Products = () => {
             } `}
             onClick={sortAscHnadler}
           >
-            ارزان ترین
+            {home.cheapest}
           </p>
           <p
             className={`font-bold cursor-pointer  text-sm ${
@@ -62,7 +67,7 @@ const Products = () => {
             } `}
             onClick={sortDescHnadler}
           >
-            گران ترین
+            {home.expensive}
           </p>
         </div>
       </div>
@@ -110,7 +115,7 @@ const Products = () => {
                     {product.rating.rate.toLocaleString("fa")}
                   </div>
                   <div className="text-[#1A43D3] font-bold  text-lg">
-                    {product.price.toLocaleString("fa")} تومان
+                    {product.price.toLocaleString("fa")} {currency.currency}
                   </div>
                 </div>
               </div>

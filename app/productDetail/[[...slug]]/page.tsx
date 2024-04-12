@@ -1,32 +1,31 @@
 "use client";
 
-
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import React, { useState } from "react";
 import { GiRoundStar } from "react-icons/gi";
+
+
+import axios from "axios";
 
 
 import ProductEditor from "@/components/products/ProductEditor";
 import ParamsProps, { ProductProps } from "@/types/types";
+import { productDetails, currency } from "@/public/texts/string";
 
 
 
+const url = process.env.NEXT_PUBLIC_API_ADD_PRODUCT;
 
 
-const url = process.env.NEXT_PUBLIC_API_ADD_PRODUCT
 
 const Page = ({ searchParams: { id } }: ParamsProps) => {
 
-  const [loadinf, setLoading] = useState(false)
-
-
   const { data: singleProductDetail } = useQuery<ProductProps>({
-    queryFn: async () =>
-      (await axios.get(`${url}${id}`)).data,
+    queryFn: async () => (await axios.get(`${url}${id}`)).data,
     queryKey: ["singleProductDetail"],
     enabled: true,
   });
+
+
 
   return (
     <>
@@ -81,8 +80,8 @@ const Page = ({ searchParams: { id } }: ParamsProps) => {
 
               <div>
                 <p className="mt-[1px] text-[#757575] text-nowrap ">
-                  {singleProductDetail?.rating.count.toLocaleString("fa")} تا
-                  باقی مانده
+                  {singleProductDetail?.rating.count.toLocaleString("fa")}
+                  {productDetails.countTo}
                 </p>
               </div>
             </div>
@@ -93,12 +92,15 @@ const Page = ({ searchParams: { id } }: ParamsProps) => {
             <div className=" max-sm:w-full  h-[1px]  bg-[#E0E0E0] " />
             <div className="flex justify-between  h-[99px] w-full max-sm:pb-10">
               <div className=" font-medium text-xs my-auto text-[#757575]  ">
-                {" "}
-                مبلغ قابل پرداخت :
+                
+                {productDetails.paymentAmount}
+
               </div>
               <div className=" font-bold my-auto mx-[34px] text-[#1A43D3] text-nowrap text-xl  ">
-                {" "}
-                {singleProductDetail?.price.toLocaleString("fa")} تومان
+         
+                {singleProductDetail?.price.toLocaleString("fa")}
+                {currency.currency}
+
               </div>
             </div>
           </div>
