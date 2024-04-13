@@ -31,3 +31,8 @@ export const editModal = {
     cancel:'انصراف'
 
 }
+
+export const UserString = {
+    name:'مهدی قربانی',
+    sitename:'تستیو'
+}

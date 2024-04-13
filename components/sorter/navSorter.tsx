@@ -1,6 +1,7 @@
 "use client";
 
 
+import { home } from "@/public/texts/string";
 import React, { useState } from "react";
 
 
@@ -23,7 +24,7 @@ const NavSorter = ( {props}: any) => {
           onClick={()=>setSort(false)
           }
         >
-          ارزان ترین
+          {home.cheapest}
         </p>
         <p
           className={`font-bold cursor-pointer  text-sm ${
@@ -33,7 +34,7 @@ const NavSorter = ( {props}: any) => {
           } `}
           onClick={()=>setSort(true)}
         >
-          گران ترین
+          {home.expensive}
         </p>
       </div>
     </div>
