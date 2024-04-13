@@ -34,6 +34,7 @@ const EditForm = ({ id, price, title, description, hideEditForm }: any) => {
   const onFinish = (values: EditProductCommand) => {
     console.log("Received values of form: ", values);
     mutateProductEdit(values);
+    hideEditForm(false)
   };
 
 

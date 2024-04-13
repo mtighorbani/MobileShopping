@@ -1,11 +1,11 @@
 
-import ProductDelete from "../api//products-api";
+import api from "./products-api";
 
 
 
 
  const deleteProduct = (id:string)=>{
-  ProductDelete.delete(id)
+  api.delete(id)
   .then((res)=>(res.data))
   
 }

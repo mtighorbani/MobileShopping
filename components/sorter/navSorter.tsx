@@ -7,12 +7,7 @@ import React, { useState } from "react";
 const NavSorter = ( {props}: any) => {
   const [sort, setSort] = useState(false);
   props(sort)
-  const sortDescHnadler= () => {
-    setSort(props);
-  };
-  const sortAscHnadler= () => {
-    setSort(props);
-  };
+
   return (
     <div
       dir="rtl"
@@ -25,7 +20,8 @@ const NavSorter = ( {props}: any) => {
               ? "text-[#1A43D3]  decoration-2 underline-offset-8 underline decoration-yellow-400"
               : ""
           } `}
-          onClick={sortAscHnadler}
+          onClick={()=>setSort(false)
+          }
         >
           ارزان ترین
         </p>
@@ -35,7 +31,7 @@ const NavSorter = ( {props}: any) => {
               ? "text-[#1A43D3]  decoration-2 underline-offset-8 underline decoration-yellow-400"
               : ""
           } `}
-          onClick={sortDescHnadler}
+          onClick={()=>setSort(true)}
         >
           گران ترین
         </p>

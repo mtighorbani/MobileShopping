@@ -1,6 +1,6 @@
 import React from "react";
 
-import deleteProduct from "@/hooks/ProductGetApi";
+import deleteProduct from "@/api/ProductGetApi";
 import { deleteModal } from "@/public/texts/string";
 
 
@@ -10,7 +10,7 @@ const DeleteModal = ({handleCancel , id}:any) => {
 
   const deleteProductHandler = () => {
     deleteProduct(`${process.env.NEXT_PUBLIC_API_ADD_PRODUCT}${id}`);
-    alert("عملیات با موفقیث انجام شد");
+    alert("حذف محصول با موفقیث انجام شد");
   };
  
 
