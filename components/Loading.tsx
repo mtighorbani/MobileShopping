@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-import { Flex, Skeleton, Space, Spin } from 'antd'
+import { Flex, Spin } from 'antd'
 
 
 
-const Loading = () => {
+const Loading = ({text}:any) => {
   return (
     <Flex gap="small" vertical>
     
-      <Spin tip="Loading" size="large">
+      <Spin tip={text} size="large">
         <div className="content" />
       </Spin>
 

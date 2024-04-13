@@ -78,7 +78,7 @@ const Products = () => {
       >
         {loading ? (
           <div className=" mt-10 w-[1280px] self-center ">
-            <Loading />
+            <Loading text='... Waiting for API'/>
           </div>
         ) : (
           sortedProducts.map((product) => (

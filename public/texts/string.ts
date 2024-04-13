@@ -8,7 +8,7 @@ export const currency = {
 }
 
 export const productDetails = {
-    countTo : 'تا باقی مانده',
+    countTo : ' تا باقی مانده  ' ,
     paymentAmount:' مبلغ قایل پرداخت :',
     edit:'ویرایش',
     delete:'جذف محصول'
