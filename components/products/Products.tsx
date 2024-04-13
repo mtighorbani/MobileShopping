@@ -88,11 +88,11 @@ const Products = () => {
               key={product.id}
             >
               <div
-                className="w-[315px] h-[422px] bg-white mb-5 ring-1 ring-[#E0E0E0]  rounded-lg pt-[25px] max-sm:mx-auto"
+                className="max-w-[315px] h-[422px] bg-white mb-5 ring-1 ring-[#E0E0E0]  rounded-lg pt-[25px] max-sm:mx-auto"
                 key={product.id}
               >
                 <img
-                  className="w-[213px] h-[239px] mx-auto "
+                  className="max-w-[213px] h-[239px] mx-auto "
                   src={product.image}
                   alt={product.title}
                 />
@@ -101,10 +101,10 @@ const Products = () => {
                     {product.title}
                   </div>
                 </div>
-                <div className=" flex justify-between w-[283px] mx-auto">
+                <div className=" flex justify-between max-w-[283px] mx-auto">
                   <div className="flex text-[#757575]">
                     {
-                      <GiRoundStar
+                      <GiRoundStar  
                         className={`${
                           product.rating.rate < 3
                             ? "text-[#cb5c3a]"
