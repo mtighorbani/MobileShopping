@@ -2,7 +2,7 @@
 Mock Mobile shop
 
 ## Technologies
-- core: `NextJs`, `TS`, `React`, `Redux-Toolkit`, `Axios`
+- core: `NextJs ("14.1.0")`, `TS`, `React`, `Redux-Toolkit`, `Axios`
 - UI: `Tailwind` , `Antd`
 
 ## Scripts
