@@ -47,7 +47,7 @@ const Products = () => {
 
       {loading ? (
         <div className=" mt-12 ">
-          <Loading text="... Waiting for API" />
+          <Loading text=" Waiting for API ..." />
         </div>
       ) : (
         ""
@@ -65,7 +65,7 @@ const Products = () => {
             key={product.id}
           >
             <div
-              className="max-w-[315px] h-[422px] bg-white mb-5 ring-1 ring-[#E0E0E0]  rounded-lg pt-[25px] max-sm:mx-auto "
+              className="max-w-[315px] h-[422px] bg-white mb-5 ring-1 ring-[#E0E0E0]  rounded-lg pt-[25px] mx-auto  "
               key={product.id}
             >
               <img

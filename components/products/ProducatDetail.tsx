@@ -60,9 +60,9 @@ const ProductDetailPage = ({ id }: any) => {
                 {singleProductDetail?.title}
               </p>
             </div>
-            <div className=" flex justify-between  w-[152px] h-6 text-sm font-normal max-sm:mb-3">
+            <div className=" flex justify-between   w-[152px] h-6 text-sm font-normal max-sm:mb-3">
               <GiRoundStar
-                className={`${"text-[#F5AC1F]"}  size-6 ml-1 bottom-[-4px]`}
+                className={`${"text-[#F5AC1F]"}   size-6 ml-1  mt-[-4px]`}
               />
 
               <p className="text-[#757575] mt-[1px]  ">
