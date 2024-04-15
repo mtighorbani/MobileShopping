@@ -31,6 +31,5 @@ export interface ProductProps {
   
 
   export default interface ParamsProps {
-    params: { slug: string };
-    searchParams: { id: number };
+    params: { id: number };
   }

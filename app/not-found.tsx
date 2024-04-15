@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 
-const notFound = () => {
+const NotFound = () => {
   return (
     <div
       dir="rtl"
@@ -16,4 +16,4 @@ const notFound = () => {
   );
 };
 
-export default notFound;
+export default NotFound;

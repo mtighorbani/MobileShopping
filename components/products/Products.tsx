@@ -60,7 +60,7 @@ const Products = () => {
       >
         {sortedProducts.map((product) => (
           <Link
-            href={`/productDetail?id=${product.id}`}
+            href={`/productDetail/${product.id}`}
             className="cursor-pointer "
             key={product.id}
           >
