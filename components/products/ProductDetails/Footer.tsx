@@ -1,5 +1,6 @@
-import { StringCurrency, stringProductDetails } from "@/public/texts/string";
 import React from "react";
+
+import { StringCurrency, stringProductDetails } from "@/public/texts/string";
 
 const Footer = ({price}:any) => {
   return (

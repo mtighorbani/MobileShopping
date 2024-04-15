@@ -6,13 +6,11 @@ import { Divider, Form, Input, InputNumber } from "antd";
 
 import { editModal } from "@/public/texts/string";
 import { EditProductCommand } from "@/types/types";
-import Link from "next/link";
-
 
 
 const EditForm = ({ id, price, title, description, hideEditForm }: any) => {
 
-
+  
   const { mutate: mutateProductEdit, isPending: pendingProductEdit } =
     useMutation({
       mutationFn: async (data: EditProductCommand) =>
@@ -31,11 +29,11 @@ const EditForm = ({ id, price, title, description, hideEditForm }: any) => {
     });
 
 
-
+    
   const onFinish = (values: EditProductCommand) => {
     console.log("Received values of form: ", values);
     mutateProductEdit(values);
-    hideEditForm(false)
+    hideEditForm(false);
   };
 
 
@@ -101,13 +99,13 @@ const EditForm = ({ id, price, title, description, hideEditForm }: any) => {
             />
           </Form.Item>
           <div className="flex max-sm:pr-2 ">
-              <a href='/'>
-            <Form.Item>
+            <a href="/">
+              <Form.Item>
                 <button className=" w-[133px] h-12 rounded-[40px] text-white bg-[#1A43D3] ">
                   {editModal.confirm}
                 </button>
-            </Form.Item>
-              </a>
+              </Form.Item>
+            </a>
             <Form.Item>
               <button
                 type="button"
