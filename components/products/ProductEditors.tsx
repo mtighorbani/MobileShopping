@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 
-import DeleteModal from "./editProducts/DeleteModal";
+import DeleteModal from "./deleteProduct/DeleteModal";
 import EditForm from "./editProducts/EditForm";
 import ProductEditsButton from "./ProductEditsButton";
 
