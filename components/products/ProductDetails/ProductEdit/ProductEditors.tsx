@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 
 import DeleteModal from "./deleteProduct/DeleteModal";
-import EditForm from "./editProducts/EditForm";
+import EditForm from "./editForm/EditForm";
 import ProductEditsButton from "./ProductEditsButton";
 
 
@@ -15,8 +15,8 @@ const ProductEditor = ({ id, price, title, description }: any) => {
   
 
   return (
-      <>
-      <ProductEditsButton setopnEdit={setopnEdit} setshowDeleteModal={setshowDeleteModal}/>
+    <div className=" absolute mt-5 mr-5">
+    <ProductEditsButton setopnEdit={setopnEdit} setshowDeleteModal={setshowDeleteModal}/>
 
 
       {showDeleteModal ? <DeleteModal id={id} handleCancel={setshowDeleteModal} />:'' }
@@ -34,7 +34,7 @@ const ProductEditor = ({ id, price, title, description }: any) => {
        :
        ""}
 
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 
 import NotFound from "@/app/not-found";
-import ProductDetailPage from "@/components/products/ProducatDetail";
+import ProductDetailPage from "@/components/products/ProductDetails/Index";
 import ParamsProps from "@/types/types";
 
 const Page = ({ params: { id } }: ParamsProps) => {

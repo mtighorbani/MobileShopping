@@ -3,15 +3,15 @@ export const home = {
     expensive:'گران ترین',
 }
 
-export const currency = {
+export const StringCurrency = {
     currency : '  تومان'
 }
 
-export const productDetails = {
+export const stringProductDetails = {
     countTo : ' تا باقی مانده  ' ,
     paymentAmount:' مبلغ قایل پرداخت :',
     edit:'ویرایش',
-    delete:'جذف محصول'
+    delete:'حذف محصول'
 }
 
 export const deleteModal = {

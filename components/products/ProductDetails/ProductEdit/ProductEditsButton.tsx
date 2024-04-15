@@ -3,7 +3,7 @@ import React from "react";
 import { RiDeleteBin6Line, RiPencilLine } from "react-icons/ri";
 
 
-import { productDetails } from "@/public/texts/string";
+import { stringProductDetails } from "@/public/texts/string";
 
 
 const ProductEditsButton = ({setopnEdit,setshowDeleteModal}:any) => {
@@ -21,7 +21,7 @@ const ProductEditsButton = ({setopnEdit,setshowDeleteModal}:any) => {
           <div aria-hidden="true">
             <RiPencilLine className="w-4 h-4 my-auto pl-1" />
           </div>
-          {productDetails.edit}
+          {stringProductDetails.edit}
         </button>
         <button
           onClick={() => setshowDeleteModal(true)}
@@ -31,7 +31,7 @@ const ProductEditsButton = ({setopnEdit,setshowDeleteModal}:any) => {
           className="inline-flex bg-white items-center px-4 py-2 text-xs font-semibold text-[#B02626] text-nowrap  border border-[#E0E0E0] rounded-e-[50px]  "
         >
           <RiDeleteBin6Line className=" w-4 h-4 ml-1 my-auto" />
-          {productDetails.delete}
+          {stringProductDetails.delete}
         </button>
       </div>
     </div>
